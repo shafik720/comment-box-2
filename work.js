@@ -28,6 +28,11 @@ document.getElementById('btn').addEventListener('click',function(){
         commentBox.appendChild(commentDiv);
         commentBox.appendChild(nameDiv);
 
+        // adding commentBox to the comment area
         document.getElementById('mainBox').appendChild(commentBox);
+
+        // clearing the inputfield
+        getName.value = '';
+        getComment.value = '';
     }
 })
