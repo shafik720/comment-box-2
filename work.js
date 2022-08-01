@@ -18,12 +18,13 @@ document.getElementById('btn').addEventListener('click',function(){
         let nameDiv = document.createElement('div');
         nameDiv.classList.add('d-flex', 'justify-content-between');
         nameDiv.innerHTML = `
-            <span><a href="#"><i class=" text-danger fa-solid fa-trash-can"></i></a></span>
+            <span><a id='delete' href="#"><i class=" text-danger fa-solid fa-trash-can"></i></a></span>
         `;
         nameDiv.appendChild(createName);
         
         // comment box for packeting nameDiv & commentDiv together
         let commentBox = document.createElement('div');
+        commentBox.id = 'comment-box';
         commentBox.classList.add('border','border-3','border-primary','py-3','px-3','rounded','my-3');
         commentBox.appendChild(commentDiv);
         commentBox.appendChild(nameDiv);
@@ -34,5 +35,12 @@ document.getElementById('btn').addEventListener('click',function(){
         // clearing the inputfield
         getName.value = '';
         getComment.value = '';
+
+        
     }
+})
+
+//making delete button 
+document.getElementById('delete').addEventListener('click', function(){
+    document.getElementById('comment-box').style.display = 'none';
 })
