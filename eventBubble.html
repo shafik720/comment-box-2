@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <section>
+        <div class="container py-5 my-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="">
+                        <button id="btn" type="button">Add</button>
+                        <ul id="ulId">
+                            <li class="item">ok, gone, to snow</li>
+                            <li id="secondItem" class="item">ok, gone, to snow</li>
+                            <li class="item">ok, gone, to snow</li>
+                            <li class="item">ok, gone, to snow</li>
+                            <li class="item">ok, gone, to snow</li>
+                            <li class="item">um dolor</li>
+                            <li class="item">Lorem ipsum dolor sit amet.</li>
+                        </ul>
+                        
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let events = document.getElementsByClassName('item');
+        for(const eventss of events){
+            eventss.addEventListener('click',function(event){
+                event.target.parentNode.removeChild(eventss);
+            })
+        }
+
+        document.getElementById('btn').addEventListener('click',function(){
+            let li = document.createElement('li');
+            li.classList.add = ('item');
+            li.innerText = 'New item added';
+
+            let ul = document.getElementById('ulId');
+            ul.appendChild(li);
+
+            let events = document.getElementsByClassName('item');
+            for(const eventss of events){
+            eventss.addEventListener('click',function(event){
+                event.target.parentNode.removeChild(eventss);
+            })
+        }
+        })
+
+
+        // document.getElementById('secondItem').addEventListener('click',function(event){
+        //     console.log('second item clicked');
+        // })
+        // document.getElementById('ulId').addEventListener('click',function(){
+        //     console.log('ul clicked');
+        // })
+    </script>
+</body>
+</html>

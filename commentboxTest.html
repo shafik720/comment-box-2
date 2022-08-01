@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box - 2</title>
+    <!-- Bootstrap css  -->
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+    <!-- Fontawesome css  -->
+    <link rel="stylesheet" href="assets/fontawesome/font-awesome.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Varela+Round&display=swap');
+
+        body{
+            font-family: 'Nunito', sans-serif ;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section>
+        <div class="container my-5 py-5">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="border py-5 px-3 rounded border-warning border-3">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label fw-bold">Name</label>
+                            <input type="email" class="form-control" id="name" placeholder="Put your name here">
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label fw-bold">Your comments</label>
+                            <textarea class="form-control" id="comment" rows="3"></textarea>
+                          </div>
+                          <div class="d-flex justify-content-between">
+                            <button id="btn" type="button" class="btn btn-warning">Post Comment</button>
+                          </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div id="mainBox" class="border border-3 py-3 px-3 rounded h-100">
+                        <div id="comment-box" class="border border-3 border-primary py-3 px-3 rounded comment-box">
+                            <div id="comment">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe magnam culpa sed ipsam laborum magni quidem soluta? Impedit nesciunt expedita quasi ipsa ducimus, odio ab blanditiis, suscipit, corrupti placeat consequuntur.</p>
+                            </div>
+                            <div id="name" class="d-flex justify-content-between">
+                                <span class="delete-item" ><a id="delete" href="#"><i class=" text-danger fa-solid fa-trash-can"></i></a></span>
+                                <h5>Redcliff Red</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="commentboxTest.js"></script>
+
+</body>
+</html>

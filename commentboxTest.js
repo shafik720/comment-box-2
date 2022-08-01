@@ -41,6 +41,17 @@ document.getElementById('btn').addEventListener('click',function(){
 })
 
 //making delete button 
-document.getElementById('delete').addEventListener('click', function(){
-    document.getElementById('comment-box').style.display = 'none';
-})
+// let deleteItems = document.getElementsByClassName('delete-item');
+// for(let deleteItem of deleteItems){
+    
+// }
+
+let commentBox = document.getElementsByClassName('comment-box');
+for(let commentBoxs of commentBox){
+    document.getElementById('delete').addEventListener('click',function(event){
+        // event.target.parentNode.removeChild(deleteItem);
+        console.log(event.target.parentNode.parentNode.parentNode.parentNode.parentNode);
+        event.target.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(commentBoxs);
+    })
+}
+
