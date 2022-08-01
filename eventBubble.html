@@ -12,14 +12,14 @@
         <div class="container py-5 my-5">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="">
+                    <div class="parentOfUl">
                         <button id="btn" type="button">Add</button>
-                        <ul id="ulId">
+                        <ul id="ulId" class="ulClass">
                             <li class="item">ok, gone, to snow</li>
-                            <li id="secondItem" class="item">ok, gone, to snow</li>
-                            <li class="item">ok, gone, to snow</li>
-                            <li class="item">ok, gone, to snow</li>
-                            <li class="item">ok, gone, to snow</li>
+                            <li id="secondItem" class="item">o snow</li>
+                            <li class="item">got not</li>
+                            <li class="item">ow</li>
+                            <li class="item">to snow</li>
                             <li class="item">um dolor</li>
                             <li class="item">Lorem ipsum dolor sit amet.</li>
                         </ul>
@@ -30,36 +30,55 @@
         </div>
     </section>
     <script>
-        let events = document.getElementsByClassName('item');
-        for(const eventss of events){
-            eventss.addEventListener('click',function(event){
-                event.target.parentNode.removeChild(eventss);
+        // let ul = document.getElementsByClassName('ulClass');
+        // for(let ulClass of ul){
+        //     let elements = document.getElementsByClassName('item');
+        // for(let element of elements){
+        //     element.addEventListener('click',function(event){
+        //         event.target.parentNode.removeChild(element);
+        //         // console.log(event.target.parentNode.parentNode);
+        //     })
+        // }
+        // }
+
+        // let ul = document.getElementById('ulId');        
+        //     // console.log(ul);
+
+        // let elements = document.getElementsByClassName('item');
+        // for(let element of elements){
+        //     element.addEventListener('click',function(event){
+        //         event.target.parentNode.parentNode.removeChild(ul);
+        //         // console.log(event.target.parentNode.parentNode);
+        //     })
+        // }
+        
+        let elements = document.getElementsByClassName('item');
+        for(let element of elements){
+            element.addEventListener('click',function(event){
+                event.target.parentNode.removeChild(element);
+                
             })
         }
-
-        document.getElementById('btn').addEventListener('click',function(){
+        
+        const ul = document.getElementById('ulId');
+        document.getElementById('btn').addEventListener('click', function(){
+            console.log('Add button clicked');
             let li = document.createElement('li');
-            li.classList.add = ('item');
             li.innerText = 'New item added';
-
-            let ul = document.getElementById('ulId');
+            li.classList.add('item');
             ul.appendChild(li);
 
-            let events = document.getElementsByClassName('item');
-            for(const eventss of events){
-            eventss.addEventListener('click',function(event){
-                event.target.parentNode.removeChild(eventss);
+            let elements = document.getElementsByClassName('item');
+            for(let element of elements){
+            element.addEventListener('click',function(event){
+                event.target.parentNode.removeChild(element);
+                // console.log(event.target.parentNode);
+                
             })
         }
         })
 
 
-        // document.getElementById('secondItem').addEventListener('click',function(event){
-        //     console.log('second item clicked');
-        // })
-        // document.getElementById('ulId').addEventListener('click',function(){
-        //     console.log('ul clicked');
-        // })
     </script>
 </body>
 </html>

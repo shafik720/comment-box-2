@@ -46,12 +46,13 @@ document.getElementById('btn').addEventListener('click',function(){
     
 // }
 
-let commentBox = document.getElementsByClassName('comment-box');
-for(let commentBoxs of commentBox){
-    document.getElementById('delete').addEventListener('click',function(event){
-        // event.target.parentNode.removeChild(deleteItem);
-        console.log(event.target.parentNode.parentNode.parentNode.parentNode.parentNode);
-        event.target.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(commentBoxs);
+const secondMainDiv = document.getElementById('comment-box');
+
+let deleteBtns = document.getElementsByClassName('delete-item');
+for(let deleteBtn of deleteBtns){
+    deleteBtn.addEventListener('click',function(event){
+        event.target.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(secondMainDiv);
+        // console.log(event.target.parentNode.parentNode.parentNode.parentNode.parentNode);
     })
 }
 
