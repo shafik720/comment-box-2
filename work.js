@@ -14,15 +14,15 @@ document.getElementById('btn').addEventListener('click',function(){
 
         let nameDiv = document.createElement('div');
         nameDiv.classList.add('d-flex', 'justify-content-between');
-        nameDiv.innerHTML = `
-            <span><a class='delete' href="#"><i class=" text-danger fa-solid fa-trash-can"></i></a></span>
-        `;
+        let deleteBtn = document.createElement('button');
+            deleteBtn.classList.add('deleteBtn','btn','btn-outline-danger');
+            deleteBtn.innerText = 'Delete';
+        nameDiv.appendChild(deleteBtn);
         nameDiv.appendChild(createName);
         
         // comment box for packeting nameDiv & commentDiv together
         let commentBox = document.createElement('div');
-        commentBox.id = 'comment-box';
-        commentBox.classList.add('border','border-3','border-primary','py-3','px-3','rounded','my-3');
+        commentBox.classList.add('comment-box','border','border-3','border-primary','py-3','px-3','rounded','my-3');
         commentBox.appendChild(commentDiv);
         commentBox.appendChild(nameDiv);
     
@@ -31,7 +31,8 @@ document.getElementById('btn').addEventListener('click',function(){
     }else{        
 
         // adding commentBox to the comment area
-        document.getElementById('mainBox').appendChild(commentBox);        
+        let mainBox = document.getElementById('mainBox');
+        mainBox.appendChild(commentBox);        
         
     }  
     // clearing the inputfield
@@ -39,6 +40,13 @@ document.getElementById('btn').addEventListener('click',function(){
     getComment.value = '';
 
     // making delete button working
+    let deleteBtns = document.getElementsByClassName('deleteBtn');
+    for(let deleteBtn of deleteBtns){
+        deleteBtn.addEventListener('click',function(event){
+            event.target.parentNode.parentNode.parentNode.removeChild(commentBox);
+            // console.log(event.target.parentNode.parentNode.parentNode);
+        })
+    }
 })
 
 //making delete button 
