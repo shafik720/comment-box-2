@@ -2,11 +2,8 @@
 document.getElementById('btn').addEventListener('click',function(){
     let getName = document.getElementById('name');
     let getComment = document.getElementById('comment');
-    
-    if(getName.value=='' || getComment.value==''){
-        
-    }else{
-        let createName = document.createElement('h5');
+
+    let createName = document.createElement('h5');
         createName.innerText = getName.value;
         
         let createComment = document.createElement('p');
@@ -18,7 +15,7 @@ document.getElementById('btn').addEventListener('click',function(){
         let nameDiv = document.createElement('div');
         nameDiv.classList.add('d-flex', 'justify-content-between');
         nameDiv.innerHTML = `
-            <span><a id='delete' href="#"><i class=" text-danger fa-solid fa-trash-can"></i></a></span>
+            <span><a class='delete' href="#"><i class=" text-danger fa-solid fa-trash-can"></i></a></span>
         `;
         nameDiv.appendChild(createName);
         
@@ -28,19 +25,25 @@ document.getElementById('btn').addEventListener('click',function(){
         commentBox.classList.add('border','border-3','border-primary','py-3','px-3','rounded','my-3');
         commentBox.appendChild(commentDiv);
         commentBox.appendChild(nameDiv);
+    
+    if(getName.value=='' || getComment.value==''){
+        
+    }else{        
 
         // adding commentBox to the comment area
-        document.getElementById('mainBox').appendChild(commentBox);
-
-        // clearing the inputfield
-        getName.value = '';
-        getComment.value = '';
-
+        document.getElementById('mainBox').appendChild(commentBox);        
         
     }  
+    // clearing the inputfield
+    getName.value = '';
+    getComment.value = '';
+
+    // making delete button working
 })
 
 //making delete button 
-document.getElementById('delete').addEventListener('click', function(){
-    document.getElementById('comment-box').style.display = 'none';
-})
+
+
+// document.getElementById('delete').addEventListener('click', function(){
+//     document.getElementById('comment-box').style.display = 'none';
+// })

@@ -68,14 +68,19 @@
             li.classList.add('item');
             ul.appendChild(li);
 
-            let elements = document.getElementsByClassName('item');
-            for(let element of elements){
-            element.addEventListener('click',function(event){
-                event.target.parentNode.removeChild(element);
-                // console.log(event.target.parentNode);
+        //     let elements = document.getElementsByClassName('item');
+        //     for(let element of elements){
+        //     element.addEventListener('click',function(event){
+        //         event.target.parentNode.removeChild(element);
+        //         // console.log(event.target.parentNode);
                 
-            })
-        }
+        //     })         
+        // }        
+        })
+
+        document.getElementById('ulId').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+            // console.log(event.target.parentNode);
         })
 
 
