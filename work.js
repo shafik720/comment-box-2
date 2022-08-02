@@ -14,10 +14,9 @@ document.getElementById('btn').addEventListener('click',function(){
 
         let nameDiv = document.createElement('div');
         nameDiv.classList.add('d-flex', 'justify-content-between');
-        let deleteBtn = document.createElement('button');
-            deleteBtn.classList.add('deleteBtn','btn','btn-outline-danger');
-            deleteBtn.innerText = 'Delete';
-        nameDiv.appendChild(deleteBtn);
+        nameDiv.innerHTML = `
+            <span class="deleteBtn" ><a href="#"><i class=" text-danger fa-solid fa-trash-can"></i></a></span>
+        `;
         nameDiv.appendChild(createName);
         
         // comment box for packeting nameDiv & commentDiv together
@@ -43,8 +42,8 @@ document.getElementById('btn').addEventListener('click',function(){
     let deleteBtns = document.getElementsByClassName('deleteBtn');
     for(let deleteBtn of deleteBtns){
         deleteBtn.addEventListener('click',function(event){
-            event.target.parentNode.parentNode.parentNode.removeChild(commentBox);
-            // console.log(event.target.parentNode.parentNode.parentNode);
+            event.target.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(commentBox);
+            // console.log(event.target.parentNode.parentNode.parentNode.parentNode.parentNode);
         })
     }
 })
